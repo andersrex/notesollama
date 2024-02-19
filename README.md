@@ -2,4 +2,14 @@
 
 # NotesOllama
 
-Use <a href="https://ollama.com">Ollama</a> to talk to local LLMs in Apple Notes. Inspired by <a href="https://github.com/hinterdupfinger/obsidian-ollama">Obsidian Ollama</a>. Why should Obsidian have all the nice plugins?
+Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired by [Obsidian Ollama](https://github.com/hinterdupfinger/obsidian-ollama). Why should Obsidian have all the nice plugins?
+
+## Usage
+
+Open the project in Xcode to run, or download here binary [here](https://smallest.app/notesollama.
+
+## License
+
+MIT License
+
+Copyright (c) 2024 Anders Rex
