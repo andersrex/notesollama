@@ -34,16 +34,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject, NSWi
         }
         
         if isAppAlreadyRunning() {
-            // Show an error dialog
-            let alert = NSAlert()
-            alert.messageText = "Error"
-            alert.informativeText = "An instance of NotesOllama is already running."
-            alert.alertStyle = .warning
-            alert.addButton(withTitle: "Quit")
-            alert.runModal()
-
-            // Terminate the application
-            NSApplication.shared.terminate(self)
+            showAlreadyRunningAlert()
         }
     }
     
@@ -69,6 +60,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject, NSWi
         }
     }
 
+    func showAlreadyRunningAlert() {
+        // Show an error dialog
+        let alert = NSAlert()
+        alert.messageText = "Error"
+        alert.informativeText = "An instance of NotesOllama is already running."
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Quit")
+        alert.runModal()
+
+        // Terminate the application
+        NSApplication.shared.terminate(self)
+    }
     
     func addMenuPanel() {
         menuPanel = NSPanel(contentRect: NSRect(x: 0, y: 0, width: PANEL_WIDTH, height: PANEL_HEIGHT),

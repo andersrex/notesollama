@@ -24,6 +24,7 @@ class NotesWatcher {
         self.onSelectionChange = onSelectionChange
         
         notesCheckTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { timer in
+            // TODO: Listen to events intead of polling here
             let app = getNotesApp()
             
             if let app { // Notes is open
@@ -38,7 +39,7 @@ class NotesWatcher {
     func createObserver(_ app: Application) throws {
         guard observer == nil else { return }
 
-        // TODO: Debounce
+        // TODO: Debounce this
         observer = app.createObserver { (observer: Observer, element: UIElement, event: AXNotification, info: [String: AnyObject]?) in
             if event == .selectedTextChanged, let selectedText = try? element.attribute(.selectedText) as String? {
                 let position = self.getPosition(app: app)
