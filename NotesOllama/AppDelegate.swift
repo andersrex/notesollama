@@ -133,6 +133,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject, NSWi
         window = nil
     }
     
+    func windowWillClose(_ notification: Notification) {
+        if !getIsAuthorized() {
+            NSApplication.shared.terminate(self)
+        }
+    }
+    
     func isAppAlreadyRunning() -> Bool {
         Application.allForBundleID(Bundle.main.bundleIdentifier ?? "").count > 1
     }
