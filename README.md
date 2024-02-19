@@ -10,7 +10,9 @@ Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired 
 
 ## Stack
 
-The project relies on [AXSwift](https://github.com/tmandry/AXSwift) to access Notes through macOS's accessibility API and [OllamaKit](https://github.com/kevinhermawan/OllamaKit) to interface with Ollama.
+- SwiftUI for user interface
+- [AXSwift](https://github.com/tmandry/AXSwift) to access Notes through macOS's accessibility API
+- [OllamaKit](https://github.com/kevinhermawan/OllamaKit) to interface with Ollama
 
 ## Usage
 
