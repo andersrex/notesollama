@@ -1,4 +1,4 @@
-<img width="128 src="notesollama-icon.png" />
+<img width="128" src="notesollama-icon.png" />
 
 # NotesOllama
 
