@@ -10,6 +10,8 @@ Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired 
 
 Open the project in Xcode to run, or download here binary [here](https://smallest.app/notesollama).
 
+NotesOllama assumes your have Ollama running on the default macOS port (http://localhost:11434).
+
 ## License
 
 MIT License
