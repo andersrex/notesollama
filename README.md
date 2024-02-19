@@ -6,7 +6,7 @@ Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired 
 
 ## Usage
 
-Open the project in Xcode to run, or download here binary [here](https://smallest.app/notesollama.
+Open the project in Xcode to run, or download here binary [here](https://smallest.app/notesollama).
 
 ## License
 
