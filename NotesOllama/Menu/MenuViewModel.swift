@@ -45,7 +45,7 @@ class MenuViewModel: ObservableObject {
         // Monitor caret move so we can stop generating on move
         monitorCaretMove()
         
-        let pasteProcessor = PasteProcessor(canNotesReceivePaste: canNotesReceivePaste)
+        let pasteService = PasteService(canNotesReceivePaste: canNotesReceivePaste)
         
         Task {
             // Tap right key to unselect and move to the right
@@ -53,7 +53,7 @@ class MenuViewModel: ObservableObject {
         
             guard await ollamaService.reachable() else {
                 print("Not reachalble")
-                pasteProcessor.addToPasteQueue("\nOooops, looks like Ollama is not running...")
+                pasteService.addToPasteQueue("\nOooops, looks like Ollama is not running...")
                 self.generationEnded()
                 return
             }
@@ -62,7 +62,7 @@ class MenuViewModel: ObservableObject {
                 if let response {
                     // Only paste if Notes is active app
                     if (self.canNotesReceivePaste()) {
-                        pasteProcessor.addToPasteQueue(response)
+                        pasteService.addToPasteQueue(response)
                     } else {
                         self.ollamaService.cancelGeneration()
                         self.generationEnded()

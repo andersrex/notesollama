@@ -22,7 +22,7 @@
 		E9CB3A032B826F3800D89DE2 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A022B826F3800D89DE2 /* LaunchAtLogin.swift */; };
 		E9CB3A052B82726B00D89DE2 /* commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A042B82726B00D89DE2 /* commands.swift */; };
 		E9CB3A072B829BA100D89DE2 /* OllamaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A062B829BA100D89DE2 /* OllamaService.swift */; };
-		E9CB3A092B834CAD00D89DE2 /* PasteProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A082B834CAD00D89DE2 /* PasteProcessor.swift */; };
+		E9CB3A092B834CAD00D89DE2 /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A082B834CAD00D89DE2 /* PasteService.swift */; };
 		E9CB3A0B2B83553200D89DE2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A0A2B83553200D89DE2 /* main.swift */; };
 		E9CB3A0D2B83657100D89DE2 /* AuthorizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A0C2B83657100D89DE2 /* AuthorizeView.swift */; };
 		E9CB3A0F2B83668D00D89DE2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB3A0E2B83668D00D89DE2 /* WelcomeView.swift */; };
@@ -63,7 +63,7 @@
 		E9CB3A022B826F3800D89DE2 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		E9CB3A042B82726B00D89DE2 /* commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commands.swift; sourceTree = "<group>"; };
 		E9CB3A062B829BA100D89DE2 /* OllamaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OllamaService.swift; sourceTree = "<group>"; };
-		E9CB3A082B834CAD00D89DE2 /* PasteProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteProcessor.swift; sourceTree = "<group>"; };
+		E9CB3A082B834CAD00D89DE2 /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
 		E9CB3A0A2B83553200D89DE2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E9CB3A0C2B83657100D89DE2 /* AuthorizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeView.swift; sourceTree = "<group>"; };
 		E9CB3A0E2B83668D00D89DE2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -96,6 +96,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E97D02642B838AAE001059A8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E9CB3A022B826F3800D89DE2 /* LaunchAtLogin.swift */,
+				E9CB3A042B82726B00D89DE2 /* commands.swift */,
+				E9CB39CB2B81E43900D89DE2 /* MenuView.swift */,
+				E9CB39FC2B823D2100D89DE2 /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E97D02652B838B3C001059A8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E9CB3A0E2B83668D00D89DE2 /* WelcomeView.swift */,
+				E9CB3A0C2B83657100D89DE2 /* AuthorizeView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E97D02662B838BD1001059A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E9CB3A062B829BA100D89DE2 /* OllamaService.swift */,
+				E9CB3A082B834CAD00D89DE2 /* PasteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E9CB39BD2B81E43900D89DE2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,21 +148,16 @@
 		E9CB39C82B81E43900D89DE2 /* NotesOllama */ = {
 			isa = PBXGroup;
 			children = (
-				E9CB39CB2B81E43900D89DE2 /* MenuView.swift */,
+				E97D02662B838BD1001059A8 /* Services */,
+				E97D02652B838B3C001059A8 /* Onboarding */,
+				E97D02642B838AAE001059A8 /* Menu */,
 				E9CB39CD2B81E43A00D89DE2 /* Assets.xcassets */,
 				E9CB39D22B81E43A00D89DE2 /* NotesOllama.entitlements */,
 				E9CB39CF2B81E43A00D89DE2 /* Preview Content */,
 				E9CB39F72B81E47700D89DE2 /* AppDelegate.swift */,
-				E9CB39FC2B823D2100D89DE2 /* MenuViewModel.swift */,
-				E9CB39FE2B823F3800D89DE2 /* utils.swift */,
-				E9CB3A082B834CAD00D89DE2 /* PasteProcessor.swift */,
-				E9CB3A0C2B83657100D89DE2 /* AuthorizeView.swift */,
 				E9CB3A002B824EC000D89DE2 /* NotesWatcher.swift */,
-				E9CB3A022B826F3800D89DE2 /* LaunchAtLogin.swift */,
-				E9CB3A042B82726B00D89DE2 /* commands.swift */,
-				E9CB3A062B829BA100D89DE2 /* OllamaService.swift */,
 				E9CB3A0A2B83553200D89DE2 /* main.swift */,
-				E9CB3A0E2B83668D00D89DE2 /* WelcomeView.swift */,
+				E9CB39FE2B823F3800D89DE2 /* utils.swift */,
 			);
 			path = NotesOllama;
 			sourceTree = "<group>";
@@ -307,7 +331,7 @@
 				E9CB3A0D2B83657100D89DE2 /* AuthorizeView.swift in Sources */,
 				E9CB3A072B829BA100D89DE2 /* OllamaService.swift in Sources */,
 				E9CB3A052B82726B00D89DE2 /* commands.swift in Sources */,
-				E9CB3A092B834CAD00D89DE2 /* PasteProcessor.swift in Sources */,
+				E9CB3A092B834CAD00D89DE2 /* PasteService.swift in Sources */,
 				E9CB3A0F2B83668D00D89DE2 /* WelcomeView.swift in Sources */,
 				E9CB39F82B81E47700D89DE2 /* AppDelegate.swift in Sources */,
 				E9CB3A0B2B83553200D89DE2 /* main.swift in Sources */,

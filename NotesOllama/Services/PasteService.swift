@@ -1,5 +1,5 @@
 //
-//  PasteProcessor.swift
+//  PasteService.swift
 //  NotesOllama
 //
 //  Created by Anders Rex on 2/19/24.
@@ -11,7 +11,7 @@ import SwiftUI
 // We're pasting using keyboard events so we can't do it too quickly
 let PASTE_INTERVAL = 0.1 // seconds
 
-class PasteProcessor {
+class PasteService {
     var canNotesReceivePaste: () -> Bool
     var lastPasteTime = DispatchTime.now()
     let pasteQueue = DispatchQueue(label: "NotesOllamaPasteQueue")
