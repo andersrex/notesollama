@@ -4,7 +4,7 @@
 
 Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired by [Obsidian Ollama](https://github.com/hinterdupfinger/obsidian-ollama). Why should Obsidian have all the nice plugins?
 
-<video src="https://github.com/andersrex/notesollama/assets/1891619/d289d5b3-1e30-4aa3-a34a-fd2a6fa888d0"></video
+<video width="800" src="https://github.com/andersrex/notesollama/assets/1891619/d289d5b3-1e30-4aa3-a34a-fd2a6fa888d0"></video
 
 ## Usage
 
