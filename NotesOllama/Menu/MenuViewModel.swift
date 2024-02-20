@@ -18,25 +18,13 @@ class MenuViewModel: ObservableObject {
     private var hasCaretMoved = false
 
     @Published var isLoading = false
+    @Published var showModelsNotFound = false
+    @Published var showOllamaNotRunning = false
     @Published var models: [String] = []
     @AppStorage("selectedModel") var selectedModel: String?
     
-    func fetchModels() {
-        Task {
-            let _models = await ollamaService.fetchModels()
-            DispatchQueue.main.async {
-                self.models = _models
-                
-                // Select latest model by default
-                if self.models.count > 0 && self.selectedModel == nil  {
-                    self.selectedModel = self.models.last
-                }
-            }
-        }
-    }
-    
     func generate(prompt: String, text: String) {
-        guard let model = selectedModel, text.count > 0 else { return }
+        guard text.count > 0 else { return }
         isLoading = true
         
         // Cancel any ongoing generation
@@ -48,13 +36,16 @@ class MenuViewModel: ObservableObject {
         let pasteService = PasteService(canNotesReceivePaste: canNotesReceivePaste)
         
         Task {
+            guard let model = await getSelectedModel() else {
+                DispatchQueue.main.async { self.showModelsNotFound = true }
+                return
+            }
+            
             // Tap right key to unselect and move to the right
             sendKeyCode(keyCodes: [RIGHT_KEY], flags: [])
         
             guard await ollamaService.reachable() else {
-                print("Not reachalble")
-                pasteService.addToPasteQueue("\nOooops, looks like Ollama is not running...")
-                self.generationEnded()
+                DispatchQueue.main.async { self.showOllamaNotRunning = true }
                 return
             }
                                     
@@ -71,6 +62,32 @@ class MenuViewModel: ObservableObject {
                     // Done
                     self.generationEnded()
                 }
+            }
+        }
+    }
+    
+    func refreshModels() {
+        Task {
+            await fetchModels()
+        }
+    }
+    
+    func getSelectedModel() async -> String? {
+        if selectedModel == nil {
+            await fetchModels()
+        }
+            
+        return selectedModel
+    }
+    
+    func fetchModels() async {
+        let _models = await ollamaService.fetchModels()
+        DispatchQueue.main.async {
+            self.models = _models
+            
+            // Select latest model by default
+            if self.models.count > 0 && self.selectedModel == nil {
+                self.selectedModel = self.models.last
             }
         }
     }

@@ -42,7 +42,7 @@ struct MenuView: View {
                                 ))
                             }
                             Divider()
-                            Button("Refresh models") { viewModel.fetchModels() }
+                            Button("Refresh models") { viewModel.refreshModels() }
                         }
                         LaunchAtLogin.Toggle("Launch at login")
                         HStack {
@@ -66,10 +66,11 @@ struct MenuView: View {
                         .scaleEffect(0.5)
                         .progressViewStyle(CircularProgressViewStyle(tint: .black))
                 }
-            }
+            }.alertHandling(viewModel: viewModel)
         }
         .onAppear {
-            viewModel.fetchModels()
+            viewModel.refreshModels()
+            
             viewModel.onGenerationEnded = {
                 updatePanelPosition(nil)
             }

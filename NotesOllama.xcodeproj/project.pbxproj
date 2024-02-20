@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E97D026B2B84BB91001059A8 /* AlertHandlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D026A2B84BB91001059A8 /* AlertHandlingExtension.swift */; };
 		E9CB39CC2B81E43900D89DE2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB39CB2B81E43900D89DE2 /* MenuView.swift */; };
 		E9CB39CE2B81E43A00D89DE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9CB39CD2B81E43A00D89DE2 /* Assets.xcassets */; };
 		E9CB39D12B81E43A00D89DE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9CB39D02B81E43A00D89DE2 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E97D026A2B84BB91001059A8 /* AlertHandlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlingExtension.swift; sourceTree = "<group>"; };
 		E9CB39C62B81E43900D89DE2 /* NotesOllama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesOllama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CB39CB2B81E43900D89DE2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E9CB39CD2B81E43A00D89DE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				E9CB3A042B82726B00D89DE2 /* commands.swift */,
 				E9CB39CB2B81E43900D89DE2 /* MenuView.swift */,
 				E9CB39FC2B823D2100D89DE2 /* MenuViewModel.swift */,
+				E97D026A2B84BB91001059A8 /* AlertHandlingExtension.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E9CB3A072B829BA100D89DE2 /* OllamaService.swift in Sources */,
 				E9CB3A052B82726B00D89DE2 /* commands.swift in Sources */,
 				E9CB3A092B834CAD00D89DE2 /* PasteService.swift in Sources */,
+				E97D026B2B84BB91001059A8 /* AlertHandlingExtension.swift in Sources */,
 				E9CB3A0F2B83668D00D89DE2 /* WelcomeView.swift in Sources */,
 				E9CB39F82B81E47700D89DE2 /* AppDelegate.swift in Sources */,
 				E9CB3A0B2B83553200D89DE2 /* main.swift in Sources */,
@@ -499,7 +503,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotesOllama/NotesOllama.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"NotesOllama/Preview Content\"";
 				DEVELOPMENT_TEAM = UL38YXE4DL;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -529,7 +533,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotesOllama/NotesOllama.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"NotesOllama/Preview Content\"";
 				DEVELOPMENT_TEAM = UL38YXE4DL;
 				ENABLE_HARDENED_RUNTIME = YES;
