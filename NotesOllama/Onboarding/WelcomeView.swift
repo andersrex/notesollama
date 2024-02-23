@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct WelcomeView: View {
+    @AppStorage("hideWelcomeMessage") private var hideWelcomeMessage = false
+
     var onGotItClicked: () -> Void
 
     var body: some View {
@@ -22,6 +24,9 @@ struct WelcomeView: View {
             Button("Got it!") {
                 onGotItClicked()
             }
+            Toggle("Do not show this message again", isOn: $hideWelcomeMessage)
+                .padding(.top, 10)
+
         }
         .padding(30)
     }

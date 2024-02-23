@@ -20,6 +20,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject, NSWi
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         if getIsAuthorized() {
+            let hideWelcomeMessage = UserDefaults.standard.bool(forKey: "hideWelcomeMessage")
+            
+            if !hideWelcomeMessage {
+                self.showWindow(view: WelcomeView(onGotItClicked: {
+                    self.hideWindow()
+                }))
+            }
+            
             addMenuPanel()
         } else {
             let authorizeView = AuthorizeView()
@@ -53,10 +61,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject, NSWi
         addMenuPanel()
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let welcomeView = WelcomeView(onGotItClicked: {
+            self.showWindow(view: WelcomeView(onGotItClicked: {
                 self.hideWindow()
-            })
-            self.showWindow(view: welcomeView)
+            }))
         }
     }
 
