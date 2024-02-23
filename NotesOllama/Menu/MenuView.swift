@@ -17,6 +17,7 @@ struct MenuView: View {
     
     @StateObject private var viewModel = MenuViewModel()
     @State var selectedText: String?
+    @State var commands: [Command] = []
 
     var body: some View {
         VStack {
@@ -81,6 +82,8 @@ struct MenuView: View {
                 }
                 self.selectedText = text
             })
+           
+            commands = loadCommandsFromFile()
         }
     }
     
