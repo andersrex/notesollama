@@ -20,6 +20,10 @@ Open the project in Xcode to run, or download the binary [here](https://smallest
 
 NotesOllama assumes your have Ollama running on the default macOS port (http://localhost:11434).
 
+You can change the default prompts by editing the commands.json file:
+
+`$ vim NotesOllama.app/Contents/Resources/commands.json`
+
 ## License
 
 MIT License
