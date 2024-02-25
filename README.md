@@ -24,6 +24,10 @@ You can change the default prompts by editing the commands.json file:
 
 `$ vim NotesOllama.app/Contents/Resources/commands.json`
 
+## Support
+
+If you'd like to support the development of NotesOllama, check out my other plugin [NotesCmdr](https://smallest.app/notescmdr). I think it's even cooler!
+
 ## License
 
 MIT License
