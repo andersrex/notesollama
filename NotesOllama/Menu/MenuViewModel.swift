@@ -57,10 +57,12 @@ class MenuViewModel: ObservableObject {
                     } else {
                         self.ollamaService.cancelGeneration()
                         self.generationEnded()
+                        pasteService.done()
                     }
                 } else {
                     // Done
                     self.generationEnded()
+                    pasteService.done()
                 }
             }
         }
