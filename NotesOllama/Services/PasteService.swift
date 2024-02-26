@@ -12,23 +12,28 @@ import SwiftUI
 let PASTE_INTERVAL = 0.1 // seconds
 
 class PasteService {
+    var textEndsInNewline: Bool
     var canNotesReceivePaste: () -> Bool
     var lastPasteTime = DispatchTime.now()
     let pasteQueue = DispatchQueue(label: "NotesOllamaPasteQueue")
     var isFirstePaste = true
     var currentLine = ""
     
-    init(canNotesReceivePaste: @escaping() -> Bool) {
+    init(textEndsInNewline: Bool, canNotesReceivePaste: @escaping() -> Bool) {
+        self.textEndsInNewline = textEndsInNewline
         self.canNotesReceivePaste = canNotesReceivePaste
     }
     
     func addToPasteQueue(_ text: String) {
         guard var textToPaste = handleMonostyle(text) else { return }
-        
-        // Make sure generation starts with a whitespace
-        if isFirstePaste && ![" ", "\n", "\t"].contains(where: textToPaste.hasPrefix) {
-            textToPaste = " " + textToPaste
+                
+        // Make sure generation starts in a new paragraph
+        if isFirstePaste {            
+            textToPaste = [" ", "\n", "\t"].contains(where: textToPaste.hasPrefix) ? String(textToPaste.dropFirst()) : textToPaste
+            let newLines = textEndsInNewline ? "\n" : "\n\n"
+            textToPaste = newLines + textToPaste
         }
+        
         isFirstePaste = false
         
         pasteQueue.async {

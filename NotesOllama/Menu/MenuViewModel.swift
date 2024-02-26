@@ -25,15 +25,20 @@ class MenuViewModel: ObservableObject {
     
     func generate(prompt: String, text: String) {
         guard text.count > 0 else { return }
-        isLoading = true
         
+        let textEndsInNewline = text.hasSuffix("\n")
+        isLoading = true
+
         // Cancel any ongoing generation
         ollamaService.cancelGeneration()
         
         // Monitor caret move so we can stop generating on move
         monitorCaretMove()
         
-        let pasteService = PasteService(canNotesReceivePaste: canNotesReceivePaste)
+        let pasteService = PasteService(
+            textEndsInNewline: textEndsInNewline,
+            canNotesReceivePaste: canNotesReceivePaste
+        )
         
         Task {
             guard let model = await getSelectedModel() else {
