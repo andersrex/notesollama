@@ -22,7 +22,7 @@ NotesOllama assumes your have Ollama running on the default macOS port (http://l
 
 ## Custom Prompts
 
-You can change the default prompts by editing the commands.json file inside the NotesOllama executable.
+You can change the default prompts by editing the commands.json file inside the NotesOllama executable and restarting from the magic wand menu.
 
 Right click the NotesOllama executable in Finder and select "Show Package Contents" and open `Contents/Resources/commands.json` in a text editor.
 
