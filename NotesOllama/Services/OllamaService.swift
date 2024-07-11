@@ -9,10 +9,18 @@ import Foundation
 import OllamaKit
 import Combine
 
-let OLLAMA_BASE_URL = "http://localhost:11434"
+let defaultBaseURL = "http://localhost:11434"
 
 class OllamaService {
-    private var ollamaKit = OllamaKit(baseURL: URL(string: OLLAMA_BASE_URL)!)
+    private var ollamaKit: OllamaKit
+
+    init() {
+        let baseURLString = ProcessInfo.processInfo.environment["NOTESOLLAMA_OLLAMA_BASE_URL"] ?? defaultBaseURL
+        guard let url = URL(string: baseURLString) else {
+            fatalError("Invalid URL string: \(baseURLString)")
+        }
+        self.ollamaKit = OllamaKit(baseURL: url)
+    }
 
     private var cancellables = Set<AnyCancellable>()
     
