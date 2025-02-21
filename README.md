@@ -36,4 +36,4 @@ If you'd like to support the development of NotesOllama, check out my other plug
 
 [MIT License](LICENSE)
 
-Copyright (c) 2024 Anders Rex
+Copyright (c) 2025 Anders Rex
