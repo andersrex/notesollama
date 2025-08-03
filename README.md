@@ -1,6 +1,8 @@
 <img width="128" src="notesollama-icon.png" />
 
-# NotesOllama
+# NotesOllama 
+
+⚠️ **This repository is no longer maintained and is provided as-is.**
 
 Use [Ollama](https://ollama.com) to talk to local LLMs in Apple Notes. Inspired by [Obsidian Ollama](https://github.com/hinterdupfinger/obsidian-ollama). Why should Obsidian have all the nice plugins?
 
